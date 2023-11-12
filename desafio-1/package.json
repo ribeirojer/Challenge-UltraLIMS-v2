@@ -1,0 +1,37 @@
+{
+  "name": "ultralims-next",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.38.4",
+    "axios": "^1.6.0",
+    "happy-dom": "^12.10.3",
+    "next": "14.0.1",
+    "react": "^18",
+    "react-dom": "^18",
+    "supertest": "^6.3.3"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.1.4",
+    "@testing-library/react": "^14.1.0",
+    "@types/jest": "^29.5.8",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/supertest": "^2.0.16",
+    "autoprefixer": "^10.0.1",
+    "jest": "^29.7.0",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5",
+    "vitest": "^0.34.6"
+  }
+}
