@@ -3,6 +3,7 @@ import axios from 'axios';
 import { ICep } from '../interfaces/Cep';
 
 const useCepSearch = () => {
+  const TIME_SHOW_MESSAGE = 4000;
   const [search, setSearch] = useState<string>('');
   const searchRef = useRef<HTMLInputElement | null>(null);
   const [listData, setListData] = useState<ICep[]>([]);
@@ -17,6 +18,30 @@ const useCepSearch = () => {
       setListData((prevListData) => [...prevListData, data]);
     }
   }, [data]);
+
+  useEffect(() => {
+    if (successMessage) {
+      setTimeout(() => {
+        setSuccessMessage('');
+      }, TIME_SHOW_MESSAGE);
+    }
+
+    return () => {
+      clearTimeout();
+    };
+  }, [successMessage]);
+
+  useEffect(() => {
+    if (errorMessage) {
+      setTimeout(() => {
+        setErrorMessage('');
+      }, TIME_SHOW_MESSAGE);
+    }
+
+    return () => {
+      clearTimeout();
+    };
+  }, [errorMessage]);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
