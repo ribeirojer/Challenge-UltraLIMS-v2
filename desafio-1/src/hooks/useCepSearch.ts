@@ -33,10 +33,13 @@ const useCepSearch = () => {
       setIsLoading(true);
       const response = await axios.get(url);
       setData(response.data);
+	  if(response.data.erro){
+        setErrorMessage('Endereço não encontrado.');
+	  }
       setIsLoading(false);
     } catch (error) {
       setIsLoading(false);
-      setErrorMessage('');
+      setErrorMessage('Houve um problema...');
       console.error('Error fetching data: ', error);
     }
   };
