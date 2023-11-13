@@ -25,10 +25,6 @@ const useCepSearch = () => {
         setSuccessMessage('');
       }, TIME_SHOW_MESSAGE);
     }
-
-    return () => {
-      clearTimeout();
-    };
   }, [successMessage]);
 
   useEffect(() => {
@@ -37,10 +33,6 @@ const useCepSearch = () => {
         setErrorMessage('');
       }, TIME_SHOW_MESSAGE);
     }
-
-    return () => {
-      clearTimeout();
-    };
   }, [errorMessage]);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
